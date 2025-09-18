@@ -1,0 +1,15 @@
+[book]
+title = "pon's house"
+authors = ["ponzoie"]
+description = "competitive programming,C++,Rust"
+language = "ja"
+multilingual = false
+src = "src"
+
+[output.html]
+additional-css = ["theme/custom.css"]
+additional-js = ["theme/custom.css"]
+mathjax-support = true              # Mathjax 有効
+no-section-label = true             # ブログなので章番号は不要
+
+
