@@ -177,7 +177,38 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="abc424"><a class="header" href="#abc424">ABC424</a></h1>
+                        <h2 id="a"><a class="header" href="#a">A</a></h2>
+<h3 id="問題概要"><a class="header" href="#問題概要">問題概要</a></h3>
+<p><a href="https://atcoder.jp/contests/abc424/tasks/abc424_a">A-Isosceles</a>
+三角形の $4$ 辺の長さが与えられる。二等辺三角形か判定しなさい。
+不正な三角形は入力として与えられない。</p>
+<h3 id="解法"><a class="header" href="#解法">解法</a></h3>
+<p>特に何も考えず、 $3$ 辺のうち少なくとも$2$辺の長さが等しければその三角形は二等辺三角形である。<br />
+もし不正な三角形が入力される可能性があるなら、一番長い辺がそれ以外の辺の長さの合計より短いかどうかを判定すればよい。</p>
+<h3 id="提出"><a class="header" href="#提出">提出</a></h3>
+<p><a href="https://atcoder.jp/contests/abc424/submissions/69509904">https://atcoder.jp/contests/abc424/submissions/69509904</a></p>
+<h2 id="b"><a class="header" href="#b">B</a></h2>
+<h3 id="問題概要-1"><a class="header" href="#問題概要-1">問題概要</a></h3>
+<p><a href="https://atcoder.jp/contests/abc424/tasks/abc424_b">B - Perfect</a>
+$N$人が$M$問からなるコンテストに参加した。人 $A_i$ が問題 $B_i$ に正解した情報が与えられる。全ての問題に正解した人の番号を正解したタイミングが早い順に出力しろ。</p>
+<h3 id="解法-1"><a class="header" href="#解法-1">解法</a></h3>
+<p>入力の制約で $i \neq j \rightarrow (A_i , B_i) \neq (A_j , B_j)$ が保証されている。<br />
+なので人ごとに正解数を管理しておいて正解数が $M$ になった瞬間に答えを保持する配列にメモすればよい。</p>
+<h3 id="提出-1"><a class="header" href="#提出-1">提出</a></h3>
+<p><a href="https://atcoder.jp/contests/abc424/submissions/69510002">https://atcoder.jp/contests/abc424/submissions/69510002</a></p>
+<h3 id="c"><a class="header" href="#c">C</a></h3>
+<h3 id="問題概要-2"><a class="header" href="#問題概要-2">問題概要</a></h3>
+<p><a href="https://atcoder.jp/contests/abc424/tasks/abc424_c">C - New Skill Acquired</a>
+$N$ 個のスキル $(A_i,B_i)$ が与えられる。
+$(A_i,B_i) = (0,0)$ のときスキル $i$ を習得済みであり、そうでないときはスキル $A_i,B_i$ のどちらかを習得していればスキル $i$ を習得できる。<br />
+すでに取得済みのスキルも含め、最大で習得できるスキルの数を求めろ。</p>
+<h3 id="制約"><a class="header" href="#制約">制約</a></h3>
+<p>$1 \le N \le 2 \times 10^5$</p>
+<h3 id="解法-2"><a class="header" href="#解法-2">解法</a></h3>
+<p>$(0,0)$ のスキルからBFSをすればよい。
+このとき、$A_i$ (もしくは$B_i$)) を添え字に持ち要素をスキルの添字にするような配列を持てば、あるスキルから次どのスキルを習得できるかが高速に探すことができる。合計ステップ回数が $N$ 回比例になる。</p>
+<h3 id="提出-2"><a class="header" href="#提出-2">提出</a></h3>
+<p><a href="https://atcoder.jp/contests/abc424/submissions/69510889">https://atcoder.jp/contests/abc424/submissions/69510889</a></p>
 
                     </main>
 
