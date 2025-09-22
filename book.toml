@@ -1,7 +1,7 @@
 [book]
 title = "pon's house"
 authors = ["ponzoie"]
-description = "competitive programming,C++,Rust"
+description = "なにかかく"
 language = "ja"
 multilingual = false
 src = "src"
