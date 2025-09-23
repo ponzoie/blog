@@ -12,4 +12,3 @@ additional-js = ["theme/custom.css"]
 mathjax-support = true              
 no-section-label = true             # 章番号
 
-
