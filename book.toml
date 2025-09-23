@@ -9,7 +9,7 @@ src = "src"
 [output.html]
 additional-css = ["theme/custom.css"]
 additional-js = ["theme/custom.css"]
-mathjax-support = true              # Mathjax 有効
-no-section-label = true             # ブログなので章番号は不要
+mathjax-support = true              
+no-section-label = true             # 章番号
 
 
