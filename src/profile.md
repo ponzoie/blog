@@ -21,5 +21,7 @@
 [![AtCoder](./img/atcoder.png)](https://atcoder.jp/users/ponzoie)
 [![GitHub](./img/github.png)](https://github.com/ponzoie)
 
-
+## 連絡
+Discord `ponzoie` にメッセージかTwitterのDM、リプライお願いします。  
+(Twitterは少し気づきづらいかも!?)
 
