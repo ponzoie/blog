@@ -1,6 +1,6 @@
 # Summary
 
-- [About](./profile.md)  
+- [About me](./profile.md)  
 
 # 競技プログラミング
 
