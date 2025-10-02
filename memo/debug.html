@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>ABC424 - pon&#x27;s house</title>
+        <title>debug - pon&#x27;s house</title>
 
 
         <!-- Custom HTML head -->
@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../profile.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">競技プログラミング</li><li class="chapter-item expanded "><a href="../comp/ABC424.html" class="active">ABC424</a></li><li class="chapter-item expanded affix "><li class="part-title">memo</li><li class="chapter-item expanded "><a href="../memo/vim.html">vim</a></li><li class="chapter-item expanded "><a href="../memo/debug.html">debug</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../profile.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">競技プログラミング</li><li class="chapter-item expanded "><a href="../comp/ABC424.html">ABC424</a></li><li class="chapter-item expanded affix "><li class="part-title">memo</li><li class="chapter-item expanded "><a href="../memo/vim.html">vim</a></li><li class="chapter-item expanded "><a href="../memo/debug.html" class="active">debug</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -176,50 +176,33 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="a"><a class="header" href="#a">A</a></h2>
-<h3 id="問題概要"><a class="header" href="#問題概要">問題概要</a></h3>
-<p><a href="https://atcoder.jp/contests/abc424/tasks/abc424_a">A-Isosceles</a><br />
-三角形の\(4\)辺の長さが与えられる。二等辺三角形か判定しなさい。<br />
-不正な三角形は入力として与えられない。</p>
-<h3 id="解法"><a class="header" href="#解法">解法</a></h3>
-<p>特に何も考えず、 \(3\) 辺のうち少なくとも$2$辺の長さが等しければその三角形は二等辺三角形である。<br />
-もし不正な三角形が入力される可能性があるなら、一番長い辺がそれ以外の辺の長さの合計より短いかどうかを判定すればよい。</p>
-<h3 id="提出"><a class="header" href="#提出">提出</a></h3>
-<p><a href="https://atcoder.jp/contests/abc424/submissions/69509904">https://atcoder.jp/contests/abc424/submissions/69509904</a></p>
-<h2 id="b"><a class="header" href="#b">B</a></h2>
-<h3 id="問題概要-1"><a class="header" href="#問題概要-1">問題概要</a></h3>
-<p><a href="https://atcoder.jp/contests/abc424/tasks/abc424_b">B - Perfect</a><br />
-\(N\) 人が \(M\) 問からなるコンテストに参加した。人 \(A_i\) が問題 \(B_i\) に正解した情報が与えられる。全ての問題に正解した人の番号を正解したタイミングが早い順に出力しろ。</p>
-<h3 id="解法-1"><a class="header" href="#解法-1">解法</a></h3>
-<p>入力の制約で \(i \neq j \rightarrow (A_i , B_i) \neq (A_j , B_j)\) が保証されている。<br />
-なので人ごとに正解数を管理しておいて正解数が \(M\) になった瞬間に答えを保持する配列にメモすればよい。</p>
-<h3 id="提出-1"><a class="header" href="#提出-1">提出</a></h3>
-<p><a href="https://atcoder.jp/contests/abc424/submissions/69510002">https://atcoder.jp/contests/abc424/submissions/69510002</a></p>
-<h3 id="c"><a class="header" href="#c">C</a></h3>
-<h3 id="問題概要-2"><a class="header" href="#問題概要-2">問題概要</a></h3>
-<p><a href="https://atcoder.jp/contests/abc424/tasks/abc424_c">C - New Skill Acquired</a><br />
-\(N\) 個のスキル \((A_i,B_i)\) が与えられる。
-\((A_i,B_i) = (0,0)\) のときスキル \(i\) を習得済みであり、そうでないときはスキル \(A_i,B_i\) のどちらかを習得していればスキル \(i\) を習得できる。<br />
-すでに取得済みのスキルも含め、最大で習得できるスキルの数を求めろ。</p>
-<h3 id="制約"><a class="header" href="#制約">制約</a></h3>
-<p>\(1 \le N \le 2 \times 10^5\)</p>
-<h3 id="解法-2"><a class="header" href="#解法-2">解法</a></h3>
-<p>\((0,0)\) のスキルからBFSをすればよい。
-このとき、\(A_i\) (もしくは \(B_i\) )) を添え字に持ち要素をスキルの添字にするような配列を持てば、あるスキルから次どのスキルを習得できるかが高速に探すことができる。合計ステップ回数が \(N\) 回比例になる。</p>
-<h3 id="提出-2"><a class="header" href="#提出-2">提出</a></h3>
-<p><a href="https://atcoder.jp/contests/abc424/submissions/69510889">https://atcoder.jp/contests/abc424/submissions/69510889</a></p>
+                        <h2 id="デバッグするときに心がけていること"><a class="header" href="#デバッグするときに心がけていること">デバッグするときに心がけていること</a></h2>
+<p>最近業務でデバッグをしていてかなり詰まったけどやることをちゃんとやったらデバッグできたので備忘録としてそのときに考えていたことをまとめる。</p>
+<ul>
+<li>現状把握</li>
+<li>バグが起きる直前直後で何をしていたか</li>
+<li>達成したい機能に対してどのようなバグが発生しているか</li>
+<li>コードを眺めるのも大事だが実際にコードを動かしてみる</li>
+<li>原因を探す(breakポイント設定、特定の行をコメントアウト)</li>
+<li>マニュアル、ドキュメントがあるなら読み返す</li>
+<li>ここまでやったこと、調べたことをメモに残しておく</li>
+<li>typoしてるかも?</li>
+<li>Gitで過去に戻る</li>
+</ul>
+<p>基本中の基本なんだけどデバッグしてるときっていい精神状態じゃないことが多いから、こういうのをあらかじめ書き出しておいてバグにハマったときに見返して機械的にデバッグするのがいいんだろうなぁと思う。<br />
+あとはGitでこまめにcommitしておくのはかなり大事。セーブポイントはたくさんつくっておく、未来の自分のために。<br />
+自分自身あまりGitが得意ではないけれど<a href="https://www.sigbus.info/compilerbook#%E4%BB%98%E9%8C%B22git%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86">このコマンド</a>だけ使えたらなんとかなった。<br />
+あとは <code>git restore .</code> とかかな。working treeの変更を元に戻すコマンド</p>
+<p>Cコンパイラ自作やりたいなぁと1年くらい前から思ってるけど結局触ってないなぁ。いつかやります、いつか。</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../profile.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../memo/vim.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../memo/vim.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -227,13 +210,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../profile.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../memo/vim.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../memo/vim.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>

@@ -92,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="profile.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">競技プログラミング</li><li class="chapter-item expanded "><a href="comp/ABC424.html">ABC424</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="profile.html">About</a></li><li class="chapter-item expanded affix "><li class="part-title">競技プログラミング</li><li class="chapter-item expanded "><a href="comp/ABC424.html">ABC424</a></li><li class="chapter-item expanded affix "><li class="part-title">memo</li><li class="chapter-item expanded "><a href="memo/vim.html">vim</a></li><li class="chapter-item expanded "><a href="memo/debug.html">debug</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -201,6 +201,9 @@
 <a href="https://bsky.app/profile/ponzoie.bsky.social"><img src="./img/bluesky.png" alt="Bluesky" /></a>
 <a href="https://atcoder.jp/users/ponzoie"><img src="./img/atcoder.png" alt="AtCoder" /></a>
 <a href="https://github.com/ponzoie"><img src="./img/github.png" alt="GitHub" /></a></p>
+<h2 id="連絡"><a class="header" href="#連絡">連絡</a></h2>
+<p>Discord <code>ponzoie</code> にメッセージかTwitterのDM、リプライお願いします。<br />
+(Twitterは少し気づきづらいかも!?)</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="a"><a class="header" href="#a">A</a></h2>
 <h3 id="問題概要"><a class="header" href="#問題概要">問題概要</a></h3>
 <p><a href="https://atcoder.jp/contests/abc424/tasks/abc424_a">A-Isosceles</a><br />
@@ -233,6 +236,37 @@
 このとき、\(A_i\) (もしくは \(B_i\) )) を添え字に持ち要素をスキルの添字にするような配列を持てば、あるスキルから次どのスキルを習得できるかが高速に探すことができる。合計ステップ回数が \(N\) 回比例になる。</p>
 <h3 id="提出-2"><a class="header" href="#提出-2">提出</a></h3>
 <p><a href="https://atcoder.jp/contests/abc424/submissions/69510889">https://atcoder.jp/contests/abc424/submissions/69510889</a></p>
+<div style="break-before: page; page-break-before: always;"></div><p>いつもvimの置換コマンドを忘れるのでメモ</p>
+<pre><code>:%s/置換前/置換後/g
+</code></pre>
+<p>複数行置換したいときは</p>
+<pre><code>:10,20s/置換前/置換後/gc
+</code></pre>
+<p>[10,20]行の範囲を置換してくれます。<br />
+ほかにも <code>ctrl + o</code> でジャンプ前に戻る、 <code>ctrl + i</code> で取り消ししたジャンプ操作を再実行とか。<br />
+<code>ctrl + f</code> <code>ctrl + b</code> がどっちがどっちか分からなくなってしまうこともあります。FとBってFのほうがキーボードだと上にあるのに <code>ctrl + f</code> だと下に動くので勘違いします。<br />
+forward と back なんだろうけどキーボードの位置関係のほうが印象が強い･･･。</p>
+<p>参考<br />
+<a href="https://qiita.com/shirochan/items/a16487d0739f455b5e8a">vim 文字列置換 基本的な事</a><br />
+<a href="https://qiita.com/Jirox/items/d589d9432302e6309719">Vim の「CTRL-O」「CTRL-I」コマンドの直感的な覚え方とジャンプ機能について</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="デバッグするときに心がけていること"><a class="header" href="#デバッグするときに心がけていること">デバッグするときに心がけていること</a></h2>
+<p>最近業務でデバッグをしていてかなり詰まったけどやることをちゃんとやったらデバッグできたので備忘録としてそのときに考えていたことをまとめる。</p>
+<ul>
+<li>現状把握</li>
+<li>バグが起きる直前直後で何をしていたか</li>
+<li>達成したい機能に対してどのようなバグが発生しているか</li>
+<li>コードを眺めるのも大事だが実際にコードを動かしてみる</li>
+<li>原因を探す(breakポイント設定、特定の行をコメントアウト)</li>
+<li>マニュアル、ドキュメントがあるなら読み返す</li>
+<li>ここまでやったこと、調べたことをメモに残しておく</li>
+<li>typoしてるかも?</li>
+<li>Gitで過去に戻る</li>
+</ul>
+<p>基本中の基本なんだけどデバッグしてるときっていい精神状態じゃないことが多いから、こういうのをあらかじめ書き出しておいてバグにハマったときに見返して機械的にデバッグするのがいいんだろうなぁと思う。<br />
+あとはGitでこまめにcommitしておくのはかなり大事。セーブポイントはたくさんつくっておく、未来の自分のために。<br />
+自分自身あまりGitが得意ではないけれど<a href="https://www.sigbus.info/compilerbook#%E4%BB%98%E9%8C%B22git%E3%81%AB%E3%82%88%E3%82%8B%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86">このコマンド</a>だけ使えたらなんとかなった。<br />
+あとは <code>git restore .</code> とかかな。working treeの変更を元に戻すコマンド</p>
+<p>Cコンパイラ自作やりたいなぁと1年くらい前から思ってるけど結局触ってないなぁ。いつかやります、いつか。</p>
 
                     </main>
 
