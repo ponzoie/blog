@@ -22,6 +22,6 @@
 [![GitHub](./img/github.png)](https://github.com/ponzoie)
 
 ## 連絡
-Discord `ponzoie` にメッセージかTwitterのDM、リプライお願いします。  
-(Twitterは少し気づきづらいかも!?)
+[Bluesky](https://bsky.app/profile/ponzoie.bsky.social)のチャット(DM)にお願いします。  
+
 
